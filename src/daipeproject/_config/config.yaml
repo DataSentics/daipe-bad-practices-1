@@ -1,0 +1,21 @@
+parameters:
+  datalake:
+    base_path: '/%kernel.environment%'
+
+  loans:
+    repayments_csv_path: 'dbfs:/RepaymentsData.csv'
+
+  # overrides default bundle settings defined in site-packages/databricksbundle/_config/config.yaml
+  #databricksbundle:
+  #  databricks_connect:
+  #    connection:
+  #      address: '%databricks.address%'
+  #      cluster_id: '[Your cluster ID]'
+
+  # overrides default bundle settings defined in site-packages/datalakebundle/_config/config.yaml
+  datalakebundle:
+    table:
+      name_template: '%kernel.environment%_{identifier}'
+      defaults:
+        base_path: '%datalake.base_path%' # from config.yaml
+        target_path: !expr 'base_path + "/" + db_identifier + "/" + table_identifier + ".delta"'
