@@ -1,5 +1,7 @@
 # Databricks notebook source
-# MAGIC %run ../../../../app/bootstrap
+# MAGIC %run ../app/bootstrap
+
+# COMMAND ----------
 
 from pyspark.sql.dataframe import DataFrame
 from datalakebundle.imports import transformation

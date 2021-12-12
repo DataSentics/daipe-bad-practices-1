@@ -1,6 +1,6 @@
 parameters:
   datalake:
-    base_path: '/%kernel.environment%'
+    base_path: 'dbfs:/daipe-bad-practices'
 
   datalakebundle:
     table:
@@ -17,11 +17,11 @@ parameters:
     - id: "123"
       name: "knihydobrovsky_cz"
       custom_attrs:
-        105: "EXT_ID"
-        104: "ADFORM_ID"
-        2: "GA_ID"
+        ext_id: custom_1
+        ga_id: custom_3
+        adform_id: custom_2
     - id: "4564"
-      name: "knihomol.cz"
+      name: "knihomol_cz"
       custom_attrs:
-        3: "EXT_ID"
-        2: "GA_ID"
+        ga_id: custom_2
+        ext_id: custom_3
